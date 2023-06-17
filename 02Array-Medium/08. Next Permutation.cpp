@@ -12,7 +12,7 @@ public:
     vector<int> nextPermutation(int N, vector<int> arr){
         // code here
         int index = -1;
-        for(int i = N-2;i>0;i--){
+        for(int i = N-2;i>=0;i--){
             if(arr[i] < arr[i+1]){
                 index = i;
                 break;
