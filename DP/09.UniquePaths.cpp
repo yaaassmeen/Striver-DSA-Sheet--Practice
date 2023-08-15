@@ -1,3 +1,6 @@
+//Recursive
+//Memoization
+//Tabulation
 class Solution {
 public:
     int uniquePaths(int m, int n) {
@@ -9,22 +12,16 @@ public:
                 temp[j]=1;
                 continue;
             }
-            
             int up=0;
             int left =0;
-            
             if(i>0)
                 up = prev[j];
             if(j>0)
-                left = temp[j-1];
-                
+                left = temp[j-1];           
             temp[j] = up + left;
         }
         prev = temp;
     }
-    
     return prev[n-1];
-
-
     }
 };
