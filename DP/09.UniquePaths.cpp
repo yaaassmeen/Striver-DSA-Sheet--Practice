@@ -1,8 +1,32 @@
 //Recursive
-
+#include <bits/stdc++.h>
+int f(int i, int j, int m, int n) {
+	if(i<0 || j<0) return 0;
+	if(i==0 && j==0) return 1;
+	int up = f(i-1, j, m, n);
+	int left = f(i, j-1, m, n);
+	return up + left;
+}
+int uniquePaths(int m, int n) {
+	// Write your code here.
+	return f(m-1, n-1, m, n);
+}
 
 //Memoization
-
+#include <bits/stdc++.h>
+int f(int i, int j, int m, int n, vector<vector<int>>& dp) {
+	if(i<0 || j<0) return 0;
+	if(i==0 && j==0) return 1;
+	if(dp[i][j] != -1) return dp[i][j];
+	int up = f(i-1, j, m, n, dp);
+	int left = f(i, j-1, m, n, dp);
+	return dp[i][j] = up + left;
+}
+int uniquePaths(int m, int n) {
+	// Write your code here.
+	vector<vector<int>> dp(m, vector<int> (n, -1));
+	return f(m-1, n-1, m, n, dp);
+}
 
 //Tabulation
 class Solution {
