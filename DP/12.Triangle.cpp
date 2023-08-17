@@ -1,4 +1,5 @@
 class Solution {
+//Recurssive
 //     int func(int i, int j, vector<vector<int>>& triangle){
 //         if(i == triangle.size()-1) {
 //             return triangle[i][j];
@@ -11,6 +12,7 @@ class Solution {
 //     int minimumTotal(vector<vector<int>>& triangle) {
 //         return func(0,0,triangle);
 //     }
+//Memoization
 //     int func(int i, int j, vector<vector<int>>& triangle, vector<vector<int>>& dp){
 //         if(i == triangle.size()-1) {
 //             return triangle[i][j];
@@ -27,6 +29,7 @@ class Solution {
 //         vector<vector<int>> dp(n,vector<int>(m,-1));
 //         return func(0,0,triangle, dp);
 //     }
+//Tabulation
 // public:
 //     int minimumTotal(vector<vector<int>>& triangle) {
 //         int n = triangle.size();
@@ -44,6 +47,7 @@ class Solution {
 //         }
 //         return dp[0][0];
 //     }
+//Space Optimization
 public:
     int minimumTotal(vector<vector<int>>& triangle) {
         int n = triangle.size();
