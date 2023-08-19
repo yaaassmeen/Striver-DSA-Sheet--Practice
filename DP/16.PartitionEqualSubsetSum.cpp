@@ -85,4 +85,24 @@ bool canPartition(vector<int> &arr, int n)
 		prev = curr;
 	}
 	return prev[k];
+	//OR
+	int sum = 0;
+	int n = arr.size();
+    	for(int i = 0; i < n; i++) 
+        	sum += arr[I];
+    
+    	if (sum % 2 == 1) 
+        	return false;
+    
+    	int k = sum / 2;
+    	vector<bool> dp(k + 1, false);
+    	dp[0] = true;
+    
+    	for (int ind = 0; ind < n; ind++) {
+        	for (int target = k; target >= arr[ind]; target--) {
+            	dp[target] = dp[target] || dp[target - arr[find]];
+        	}
+    	}
+    
+    	return dp[k];
 }
