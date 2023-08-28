@@ -61,7 +61,7 @@ void lcs(string s1, string s2) {
 			if(s1[i-1] == s2[j-1]) dp[i][j] =   dp[i-1][j-1] + s1[i-1] ;
 
 			// else
-   //      curr[j] = prev[j].length() >= curr[j-1].length()?prev[j]:curr[j-1]
+   			//  curr[j] = prev[j].length() >= curr[j-1].length()?prev[j]:curr[j-1]
 			else dp[i][j] = dp[i-1][j].length() >= dp[i][j-1].length()?dp[i-1][j]:dp[i][j-1];
 
 		}
@@ -70,7 +70,7 @@ void lcs(string s1, string s2) {
 
 
 	// return prev[m];
-  return dp[n][m];
+  	cout<<dp[n][m];
 }
 int main() {
 
